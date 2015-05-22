@@ -15,14 +15,45 @@
 		<div class="container">
 			<div class="row">
 				<div class="sideZone col-md-4">
+					<!--
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam orci ex, aliquet a dolor nec, pulvinar varius metus. Donec ut condimentum nunc, vitae tincidunt massa. Cras non ultrices massa. In hac habitasse platea dictumst. Vestibulum ex lacus, venenatis eget odio in, cursus vestibulum sapien. Sed ultricies dapibus nisl ut sodales. Vivamus convallis neque quis erat gravida, eget lacinia ex blandit. Ut venenatis velit diam, a ornare arcu tempor eu. Vestibulum in lectus dapibus, consectetur justo et, volutpat neque. Vivamus sed imperdiet tellus. Morbi et dui rhoncus, rutrum diam dictum, vulputate urna. Fusce eget felis ut erat posuere ornare sed a sem. Maecenas dignissim pulvinar felis vel luctus. Vestibulum tincidunt purus massa, ut gravida nibh pharetra id. Vestibulum sodales sem massa. Cras at ante consequat, iaculis mi sit amet, elementum risus. <br>
 					Sed ornare lacinia metus vitae cursus. Pellentesque interdum commodo velit, ac efficitur libero tempor id. Nam quis lobortis tortor. Sed at venenatis mauris, ac aliquet velit. Donec mollis, ante congue porta interdum, tellus lacus vehicula erat, sit amet consectetur sapien nisi vitae purus. Pellentesque augue purus, interdum ac porta in, mattis convallis nulla. Aenean in condimentum mauris. Sed quis sollicitudin quam. Ut dapibus erat quis nulla sollicitudin, vestibulum posuere tellus tempor. Morbi aliquam, ligula ut maximus placerat, metus massa efficitur est, eget ultricies mi ex at ex. Nullam tempus orci risus. Praesent a ultrices diam. Sed congue in lacus sit amet scelerisque. Donec nec massa aliquam, accumsan eros eu, porttitor odio. Duis sit amet lacus sollicitudin, posuere mi in, scelerisque dui. Donec sollicitudin maximus quam sed egestas.br <br>
 					<i class="fa fa-flickr"></i>
 					<i class="fa fa-github-square"></i>
+					-->
 				</div>
 				<div class="contentZone col-md-8">
-					Suspendisse id erat pretium, placerat nibh sed, iaculis justo. Suspendisse rutrum molestie nisl, sit amet feugiat nisl aliquet ut. Etiam aliquet nunc sed ligula rutrum consequat. Etiam efficitur tincidunt pharetra. Aenean nec eleifend risus. Sed dignissim risus efficitur risus fringilla, nec malesuada mi facilisis. Ut sit amet quam laoreet ante laoreet pretium eu quis massa. Aenean eu accumsan augue, non scelerisque risus. Mauris egestas elit sit amet lobortis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum interdum porta. Aenean lacinia cursus nibh, sed porttitor sapien facilisis at. Nulla lacinia elit et risus fringilla iaculis. <br>
+					<!--
+					Suspendisse id erat pretium, placerat nibh sed, iaculis justo. Suspendisse rutrum molestie nisl, sit amet feugiat nisl aliquet ut. Etiam aliquet nunc sed ligula rutrum consequat. Etiam efficitur tincidunt pharetra. Aenean nec eleifend risus. Sed dignissim risus efficitur risus fringilla, nec malesuada mi facilisis. Ut sit amet quam laoreet ante laoreet pretium eu quis massa. Aenean eu accumsan augue, non scelerisque risus. Mauris egestas elit sit amet lobortis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum interdum porta. Aenean lacinia cursus nibh, sed porttitor sapien facilisis at. Nulla lacinia elit et risus fringilla iaculis. <br>-->
 					Nulla posuere massa quis sodales mollis. Integer at rhoncus massa. Integer id lectus magna. Pellentesque cursus aliquam nisi quis sodales. Nam metus odio, porttitor vel quam non, mollis venenatis dolor. Donec consectetur ex augue, scelerisque facilisis augue vulputate a. Etiam dignissim eu purus vitae elementum. Etiam justo leo, dignissim eu malesuada non, laoreet in arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque vel pulvinar augue. Ut pretium, est quis gravida venenatis, ipsum tellus accumsan libero, in tempus magna lorem vel felis. Curabitur ut arcu eu felis iaculis iaculis.
+					<div class="graphZone">
+						<ul class="graphList list-unstyled">
+							<li class="item">
+								<span data-value="30" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="57" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="10" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="79" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="100" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="43" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -32,6 +63,37 @@
 
 		<script>
 
+			// position relative to scroll
+			// return true if element is on top of the screen (posibility to add marge)
+			var posOnScroll = function(e, scrollPos, marge){
+				var $elem = $(e);
+				if(marge=="undefined") marge=0;
+				if(($elem.offset().top-marge) <= scrollPos) {
+					return true;
+				}
+			}
+
+			// Animate graph
+			var graphAnim = function(active, e) {
+				var $el = $(e),
+						gauges = $el.find(".gauge");
+
+				if(active == true) {
+					gauges.each(function(shift){
+						console.log($(this).width());
+						if($(this).width() <= 0) {
+							$(this).delay(shift*100).animate({ "width": $(this).attr("data-value")+"%" }, "ease-out" );
+						}
+					})
+				};
+			}
+
+			// on scroll
+			$(window, "body", "html").scroll(function(){
+				// call graphAnim function with posOnScroll parameter
+				graphAnim(posOnScroll(".graphZone", $(this).scrollTop(), ($(window).height()/1.35)), ".graphZone");
+			});
+		
 		</script>
 
 	</body>

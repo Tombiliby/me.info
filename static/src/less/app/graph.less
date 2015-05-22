@@ -1,0 +1,20 @@
+.graphZone {
+	margin: 1000px 0;
+	.graphList {
+		.item {
+			height: 30px;
+			position: relative;
+			background: @color-gray-light;
+			> span {
+				position: absolute;
+				top: 0;
+			}
+			.gauge {
+				height: 30px;
+				width: 0px;
+				display: block;
+				background: @color-gray-dark;
+			}
+		}
+	}
+}
