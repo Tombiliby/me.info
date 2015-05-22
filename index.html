@@ -26,7 +26,35 @@
 					<!--
 					Suspendisse id erat pretium, placerat nibh sed, iaculis justo. Suspendisse rutrum molestie nisl, sit amet feugiat nisl aliquet ut. Etiam aliquet nunc sed ligula rutrum consequat. Etiam efficitur tincidunt pharetra. Aenean nec eleifend risus. Sed dignissim risus efficitur risus fringilla, nec malesuada mi facilisis. Ut sit amet quam laoreet ante laoreet pretium eu quis massa. Aenean eu accumsan augue, non scelerisque risus. Mauris egestas elit sit amet lobortis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum interdum porta. Aenean lacinia cursus nibh, sed porttitor sapien facilisis at. Nulla lacinia elit et risus fringilla iaculis. <br>-->
 					Nulla posuere massa quis sodales mollis. Integer at rhoncus massa. Integer id lectus magna. Pellentesque cursus aliquam nisi quis sodales. Nam metus odio, porttitor vel quam non, mollis venenatis dolor. Donec consectetur ex augue, scelerisque facilisis augue vulputate a. Etiam dignissim eu purus vitae elementum. Etiam justo leo, dignissim eu malesuada non, laoreet in arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque vel pulvinar augue. Ut pretium, est quis gravida venenatis, ipsum tellus accumsan libero, in tempus magna lorem vel felis. Curabitur ut arcu eu felis iaculis iaculis.
-					<div class="graphZone">
+					<div class="graphZone demo1">
+						<ul class="graphList list-unstyled">
+							<li class="item">
+								<span data-value="30" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="57" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="10" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="79" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="100" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+							<li class="item">
+								<span data-value="43" class="gauge"></span>
+								<span class="lbl">Roger</span>
+							</li>
+						</ul>
+					</div>
+					<div class="graphZone demo2">
 						<ul class="graphList list-unstyled">
 							<li class="item">
 								<span data-value="30" class="gauge"></span>
@@ -80,7 +108,6 @@
 
 				if(active == true) {
 					gauges.each(function(shift){
-						console.log($(this).width());
 						if($(this).width() <= 0) {
 							$(this).delay(shift*100).animate({ "width": $(this).attr("data-value")+"%" }, "ease-out" );
 						}
@@ -91,7 +118,8 @@
 			// on scroll
 			$(window, "body", "html").scroll(function(){
 				// call graphAnim function with posOnScroll parameter
-				graphAnim(posOnScroll(".graphZone", $(this).scrollTop(), ($(window).height()/1.35)), ".graphZone");
+				graphAnim(posOnScroll(".graphZone.demo1", $(this).scrollTop(), ($(window).height()/1.35)), ".graphZone.demo1");
+				graphAnim(posOnScroll(".graphZone.demo2", $(this).scrollTop(), ($(window).height()/1.35)), ".graphZone.demo2");
 			});
 		
 		</script>
