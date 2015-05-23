@@ -18,13 +18,11 @@ module.exports = function(grunt) {
 				files: {
 					"<%= pathOrx.distStatic %>/css/style.css": [
 					"<%= pathOrx.srcStatic %>/less/bootstrap/bootstrap.less",
-					//"<%= pathOrx.srcStatic %>/less/iconic/font-awesome.less",
-					//"<%= pathOrx.srcStatic %>/less/fonts/fonts.less",
+					"<%= pathOrx.srcStatic %>/less/iconic/font-awesome.less",
+					"<%= pathOrx.srcStatic %>/less/fonts/fonts.less",
 					"<%= pathOrx.srcStatic %>/less/app/app.less",
 					"<%= pathOrx.srcStatic %>/less/theme.less"
 					]
-					, "<%= pathOrx.distStatic %>/css/fonts.css": ["<%= pathOrx.srcStatic %>/less/fonts/fonts.less"]
-					, "<%= pathOrx.distStatic %>/css/iconic.css": ["<%= pathOrx.srcStatic %>/less/iconic/font-awesome.less"]
 				}
 			}
 		},
@@ -34,23 +32,14 @@ module.exports = function(grunt) {
 				stripBanners: true,
 				banner: "/*! Generated : " + grunt.template.today("yyyy-mm-dd") + " */\n"
 			},
-			lib: {
+			app: {
 				src: [
 					"<%= pathOrx.srcStatic %>/js/lib/jquery.js",
 					"<%= pathOrx.srcStatic %>/js/lib/bootstrap.js",
-					"<%= pathOrx.srcStatic %>/js/lib/underscore.js",
-					"<%= pathOrx.srcStatic %>/js/lib/backbone.js"
+					"<%= pathOrx.distStatic %>/js/app/*",
+					"<%= pathOrx.distStatic %>/js/app/app.js"
 				],
-				dest: "<%= pathOrx.distStatic %>/js/lib.min.js"
-			},
-			app: {
-				src: [
-					"<%= pathOrx.distStatic %>/js/app/collections/*.js",
-					"<%= pathOrx.distStatic %>/js/app/models/*.js",
-					"<%= pathOrx.distStatic %>/js/app/views/*.js",
-					"<%= pathOrx.distStatic %>/js/app/app.js",
-				],
-				dest: "<%= pathOrx.distStatic %>/js/app.min.js"
+				dest: "<%= pathOrx.distStatic %>/js/app.js"
 			}
 		},
 
@@ -97,6 +86,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	// Default task.
-	grunt.registerTask("build", ["uglify", "concat:app", "concat:lib","less","copy"]);
+	grunt.registerTask("build", ["uglify", "concat:app","less","copy"]);
 
 };

@@ -1,0 +1,40 @@
+.skillsZone {
+	h3 {
+		font-size: 12px;
+		color: @color-gray-dark;
+		margin: 0 0 10px;
+		display: block;
+		.font-sans-regular();
+	}
+	h4 {
+		.font-heading-bold();
+	}
+	.skillsCol {
+		margin-bottom: 20px;
+	}
+	// Graph
+	.skillsList {
+		.item {
+			height: 30px;
+			position: relative;
+			background: @color-gray-lighter;
+			margin-bottom: 10px;
+			> span {
+				position: absolute;
+				top: 0;
+			}
+			.gauge {
+				height: 30px;
+				width: 0px;
+				display: block;
+				background: @color-gray;
+			}
+			.lbl {
+				line-height: 30px;
+				font-size: 14px;
+				padding-left: 5px;
+				.font-sans-regular();
+			}
+		}
+	}
+}

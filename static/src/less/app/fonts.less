@@ -1,0 +1,84 @@
+// HEADING
+h2, .h2 {
+	margin-bottom: 20px;
+	.font-heading-hairline();
+}
+
+
+// BODY
+// Reset tags 
+body {
+    font-family: @font-serif-regular;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    color: @color-gray-base;
+}
+
+i { font-family: @font-serif-italic; font-weight: normal; font-style: normal; }
+b, strong, label { font-family: @font-serif-bold; font-weight: normal; font-style: normal; }
+i strong, strong i { font-family: @font-serif-bold-italic; font-weight: normal; font-style: normal; }
+label.list-unstyled { font-family: @font-serif-regular; }
+
+.sideZone .h2 {
+	font-size: 22px;
+	margin:0 0 15px;
+	.font-heading-hairline();
+}
+
+// MIXINS
+// heading
+.font-heading-regular {
+	font-family: @font-heading-regular;
+	font-weight: normal;
+}
+.font-heading-light {
+	font-family: @font-heading-light;
+	font-weight: normal;
+}
+.font-heading-hairline {
+	font-family: @font-heading-hairline;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.font-heading-bold {
+	font-family: @font-heading-bold;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 18px;
+}
+
+// Sans serif
+.font-sans-regular {
+	font-family: @font-sans-regular;
+	font-weight: normal;
+}
+.font-sans-italic {
+	font-family: @font-sans-italic;
+	font-weight: normal;
+}
+.font-sans-bold {
+	font-family: @font-sans-bold;
+	font-weight: normal;
+}
+
+// Serif
+.font-serif-regular {
+	font-family: @font-serif-regular;
+	font-weight: normal;
+}
+.font-serif-italic {
+	font-family: @font-serif-italic;
+	font-weight: normal;
+}
+.font-serif-bold {
+	font-family: @font-serif-bold;
+	font-weight: normal;
+}
+.font-serif-bold-italic {
+	font-family: @font-serif-bold-italic;
+	font-weight: normal;
+}

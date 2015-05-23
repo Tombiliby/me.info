@@ -1,0 +1,55 @@
+.headingZone {
+	white-space: nowrap;
+	padding: 15px;
+	margin-bottom: 40px;
+	.clearfix();
+	.msg_hello {
+		text-align: center;
+		line-height: 0.7;
+		margin: 0;
+		.font-heading-bold ();
+	}
+	.msg_titleCV h1 {
+		font-size: 64px;
+		text-align: center;
+		margin: 0;
+		.font-heading-bold ();
+	}
+}
+
+// SM
+@media (max-width: @screen-xs-max) {
+	.headingZone {
+		.msg_hello {
+			font-size: 84px;
+		}
+		.msg_titleCV h1 {
+			font-size: 35px;
+		}
+	}
+}
+
+
+// MD
+@media (min-width: @screen-xs-min) and (max-width: @screen-md-max) {
+	.headingZone {
+		.msg_hello {
+			font-size: 55px;
+		}
+		.msg_titleCV h1 {
+			font-size: 23px;
+		}
+	}
+}
+
+// LG
+@media (min-width: @screen-lg-min) {
+	.headingZone {
+		.msg_hello {
+			font-size: 64px;
+		}
+		.msg_titleCV h1 {
+			font-size: 27px;
+		}
+	}
+}

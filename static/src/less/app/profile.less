@@ -1,0 +1,31 @@
+section.profileZone {
+	text-align: center;
+	margin: 30px 0 50px;
+	.avatarZone {
+		margin-bottom: 15px;
+		img { max-width: 90px; }
+	}
+	.nameZone {
+		.font-heading-bold();
+		font-size: 22px;
+	}
+	.functionPro {
+		h2 {
+			margin: -5px 0 35px;
+			font-size: 14px;
+			color: @color-gray-dark;
+			.font-serif-bold-italic();
+			text-transform: none;
+			letter-spacing: normal;
+		}
+	}
+	.contactMeZone .btn {
+		border: 1px solid @color-primary;
+		border-radius:100px;
+		.font-sans-regular();
+		&:hover {
+			background: @color-primary;
+			color: #FFF;
+		}
+	}
+}
