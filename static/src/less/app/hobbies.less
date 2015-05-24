@@ -9,7 +9,7 @@
 		margin-bottom: 15px;
 		.font-sans-regular();
 		.circleHobbie {
-			border: 2px solid @color-gray-dark;
+			border: 1px solid @color-gray-darker;
 			display: inline-block;
 			border-radius: 999px;
 			height: 60px;
@@ -17,11 +17,37 @@
 			text-align: center;
 			line-height: 60px;
 			font-size: 25px;
-			color:@color-gray-dark;
+			color:@color-gray-darker;
 			margin-bottom: 5px;
 		}
 		.lbl {
 			font-size: 14px;
 		}
+	}
+}
+
+// XS
+@media (max-width: @screen-xs-max) {
+	.hobbiesZone .circleHobbieZone {
+		width: 33%;
+	}
+}
+// SM
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	.hobbiesZone .circleHobbieZone {
+		width: 25%;
+	}
+}
+// MD
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+	.hobbiesZone .circleHobbieZone {
+		width: 33%;
+	}
+}
+
+// LG
+@media (min-width: @screen-lg-min) {
+	.hobbiesZone .circleHobbieZone {
+		width: 25%;
 	}
 }
