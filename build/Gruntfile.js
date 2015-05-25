@@ -22,6 +22,9 @@ module.exports = function(grunt) {
 					"<%= pathOrx.srcStatic %>/less/fonts/fonts.less",
 					"<%= pathOrx.srcStatic %>/less/app/app.less",
 					"<%= pathOrx.srcStatic %>/less/theme.less"
+					],
+					"<%= pathOrx.distStatic %>/css/lowerIE9.css": [
+					"<%= pathOrx.srcStatic %>/less/app/lowerIE9.less"
 					]
 				}
 			}
