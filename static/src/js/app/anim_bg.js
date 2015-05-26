@@ -9,7 +9,7 @@ var animBG = function() {
 	var rotateMax = 180 * $(window).scrollTop() / ($(document).height() - $(window).height()),
 			rotateMin = 70,
 			rotate = rotateMin - rotateMax,
-			transXMax = 600 * $(window).scrollTop() / ($(document).height() - $(window).height()),
+			transXMax = 1000 * $(window).scrollTop() / ($(document).height() - $(window).height()),
 			transXMin = 0,
 			transX = transXMin + transXMax;
 
@@ -24,7 +24,7 @@ var animBG2 = function() {
 	var rotateMax = 190 * $(window).scrollTop() / ($(document).height() - $(window).height()),
 			rotateMin = 40,
 			rotate = rotateMin - rotateMax,
-			transXMax = 800 * $(window).scrollTop() / ($(document).height() - $(window).height()),
+			transXMax = 2000 * $(window).scrollTop() / ($(document).height() - $(window).height()),
 			transXMin = 0,
 			transX = transXMin + transXMax;
 
