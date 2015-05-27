@@ -25,12 +25,12 @@ var graphAnim = function(active, e) {
 
 graphAnim(posOnScroll(".skillsCol.skillsSoftware", $(this).scrollTop(), ($(window).height()/1.35)), ".skillsCol.skillsSoftware");
 graphAnim(posOnScroll(".skillsCol.skillsProg", $(this).scrollTop(), ($(window).height()/1.35)), ".skillsCol.skillsProg");
-graphAnim(posOnScroll(".skillsCol.skillsOrg", $(this).scrollTop(), ($(window).height()/1.25)), ".skillsCol.skillsOrg");
+graphAnim(posOnScroll(".skillsCol.skillsOrg", $(this).scrollTop(), ($(window).height()/1.15)), ".skillsCol.skillsOrg");
 
 // on scroll
 $(window, "body", "html").scroll(function(){
 	// call graphAnim function with posOnScroll parameter
 	graphAnim(posOnScroll(".skillsCol.skillsSoftware", $(this).scrollTop(), ($(window).height()/1.35)), ".skillsCol.skillsSoftware");
 	graphAnim(posOnScroll(".skillsCol.skillsProg", $(this).scrollTop(), ($(window).height()/1.35)), ".skillsCol.skillsProg");
-	graphAnim(posOnScroll(".skillsCol.skillsOrg", $(this).scrollTop(), ($(window).height()/1.25)), ".skillsCol.skillsOrg");
+	graphAnim(posOnScroll(".skillsCol.skillsOrg", $(this).scrollTop(), ($(window).height()/1.15)), ".skillsCol.skillsOrg");
 });

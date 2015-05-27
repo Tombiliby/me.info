@@ -22,14 +22,24 @@ b, strong, label { font-family: @font-serif-bold; font-weight: normal; font-styl
 i strong, strong i { font-family: @font-serif-bold-italic; font-weight: normal; font-style: normal; }
 label.list-unstyled { font-family: @font-serif-regular; }
 
+a, .link {
+	color: inherit;
+	&:hover {
+		color: inherit;
+		text-decoration: underline;
+	}
+}
 
 ::selection { color: #fff; background: @color-secondary; } 
 
-.sideZone .h2 {
-	font-size: 22px;
-	margin:0 0 15px;
-	.font-heading-hairline();
+@media (min-width: @screen-md-min) {
+	.sideZone .h2 {
+		font-size: 22px;
+		margin:0 0 15px;
+		.font-heading-hairline();
+	} 
 }
+
 
 // MIXINS
 // heading

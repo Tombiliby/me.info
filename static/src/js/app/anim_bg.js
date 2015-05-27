@@ -1,5 +1,5 @@
 // centring element 
-$(".bgAnimZone, .bgMobile").find(".shape").css({
+$(".bgAnimZone").find(".shape").css({
 	"top": -($(".bgAnimZone").find(".shape1").height()/2) + ($(window).height()/2)
 });
 

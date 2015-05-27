@@ -1,4 +1,4 @@
-.bgAnimZone, .bgMobile {
+.bgAnimZone {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -6,37 +6,21 @@
 	right: 0;
 	//width: 100%; 
 	z-index: -1;
-}
-.bgMobile { display: none; }
-
-.shape {
-	position: absolute;
-	right: -2900px;
-	width: 3000px;
-	top: -1500px;
-	height: 10000px;
-	//background: rgba(255, 239, 63, 0.27);
-	background: rgba(0, 0, 0, 0.05);
-	transform-origin:left center;
+	.shape {
+		position: absolute;
+		right: -2900px;
+		width: 3000px;
+		top: -1500px;
+		height: 10000px;
+		//background: rgba(255, 239, 63, 0.27);
+		background: rgba(0, 0, 0, 0.05);
+ 		.transform-origin(left center);
+	}
 }
 
-
-// XS
-@media (max-width: @screen-md-max) {
+// SM
+@media (max-width: @screen-sm-max) {
 	.bgAnimZone {
 		display: none;
-	}
-	.bgMobile {
-		display: block;
-		.shape {	
-			&.shapeMobile1 {
-				display: block;
-				.rotate(55deg);
-			}
-			&.shapeMobile2 {
-				display: block;
-				.rotate(30deg);
-			}
-		}
 	}
 }
