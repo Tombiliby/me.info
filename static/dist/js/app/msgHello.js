@@ -1,0 +1,1 @@
+var now=new Date,hours=now.getHours();hours>18&&$("#msg_hello").text("BONSOIR");
