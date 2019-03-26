@@ -7,11 +7,17 @@
 //## Define fonts for the body text - Dependent : fonts/fonts-body.less
 	
 //** Font file
-@font-serif-path: 										"../fonts/heuristica";
-
+@font-serif-path: 										"../fonts/heuristica"; 
+@font-serif-file-name-regular: 				"Heuristica-Regular";
+@font-serif-file-name-italic: 				"Heuristica-Italic";
+@font-serif-file-name-bold: 					"Heuristica-Bold";
+@font-serif-file-name-bold-italic: 		"Heuristica-BoldItalic";
 //** Font name
-@font-serif:											"heuristica";
-
+@font-serif-name:											"heuristica";
+@font-serif-regular: 									"@{font-serif-name}-regular";
+@font-serif-italic: 									"@{font-serif-name}-italic";
+@font-serif-bold: 										"@{font-serif-name}-bold";
+@font-serif-bold-italic: 							"@{font-serif-name}-bold-italic";
 
 //== Fonts Sans
 //
@@ -19,10 +25,16 @@
 	
 //** Font file
 @font-sans-path: 											"../fonts/opensans"; 
-
+@font-sans-file-name-regular: 				"OpenSans-Regular";
+@font-sans-file-name-italic: 					"OpenSans-Italic";
+@font-sans-file-name-bold: 						"OpenSans-Bold";
+@font-sans-file-name-bold-italic: 		"OpenSans-BoldItalic";
 //** Font name
-@font-sans: 													"openSans";
-
+@font-sans-name:											"openSans";
+@font-sans-regular: 									"@{font-sans-name}-regular";
+@font-sans-italic: 										"@{font-sans-name}-italic";
+@font-sans-bold: 											"@{font-sans-name}-bold";
+@font-sans-bold-italic: 							"@{font-sans-name}-bold-italic";
 
 //== Fonts heading
 //
@@ -30,7 +42,15 @@
 
 //** Font file
 @font-heading-path: 										"../fonts/montserrat"; 
-
+@font-heading-file-name-regular: 				"Montserrat-Regular";
+@font-heading-file-name-bold: 					"Montserrat-Bold";
+@font-heading-file-name-light: 					"Montserrat-Light";
+@font-heading-file-name-hairline: 			"Montserrat-Hairline";
+@font-heading-file-name-black: 					"Montserrat-Black";
 //** Font name
-@font-heading: 													"montserrat";
-
+@font-heading-name:											"montserrat";
+@font-heading-regular: 									"@{font-heading-name}-regular";
+@font-heading-bold: 										"@{font-heading-name}-bold";
+@font-heading-light: 										"@{font-heading-name}-light";
+@font-heading-hairline: 								"@{font-heading-name}-hairline";
+@font-heading-black: 										"@{font-heading-name}-bold-black";

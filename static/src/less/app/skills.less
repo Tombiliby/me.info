@@ -17,8 +17,7 @@
 		.item {
 			height: 30px;
 			position: relative;
-			background: @color-gray-lighter;
-			background: rgba(52, 50, 50, .1);
+			background: fade(@text-color, 2%);
 			margin-bottom: 10px;
 			> span {
 				position: absolute;
@@ -28,8 +27,7 @@
 				height: 30px;
 				width: 0px;
 				display: block;
-				background: @color-gray;
-				background: rgba(117, 113, 113, .15)
+				background: fade(@text-color, 10%);
 			}
 			.lbl {
 				line-height: 30px;

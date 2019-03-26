@@ -8,16 +8,19 @@ h2, .h2 {
 // BODY
 // Reset tags 
 body {
-    font-family: @font-sans;
+    font-family: @font-serif-regular;
     font-weight: normal;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
-    color: @color-gray-base;
+    color: @text-color;
 }
 
-label.list-unstyled { font-family: @font-serif; }
+i { font-family: @font-serif-italic; font-weight: normal; font-style: normal; }
+b, strong, label { font-family: @font-serif-bold; font-weight: normal; font-style: normal; }
+i strong, strong i { font-family: @font-serif-bold-italic; font-weight: normal; font-style: normal; }
+label.list-unstyled { font-family: @font-serif-regular; }
 
 a, .link {
 	color: inherit;
@@ -41,75 +44,54 @@ a, .link {
 // MIXINS
 // heading
 .font-heading-regular {
-	font-family: @font-heading;
+	font-family: @font-heading-regular;
 	font-weight: normal;
-	font-style: normal;
 }
 .font-heading-light {
-	font-family: @font-heading;
-	font-weight: lighter;
-	font-style: normal;
+	font-family: @font-heading-light;
+	font-weight: normal;
 }
 .font-heading-hairline {
-	font-family: @font-heading;
-	font-weight: 100;
-	font-style: normal;
+	font-family: @font-heading-hairline;
+	font-weight: normal;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 .font-heading-bold {
-	font-family: @font-heading;
+	font-family: @font-heading-bold;
 	text-transform: uppercase;
-	font-weight: bold;
-	font-style: normal;
-}
-.font-heading-black {
-	font-family: @font-heading;
-	text-transform: uppercase;
-	font-weight: 900;
-	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
 }
 
 // Sans serif
 .font-sans-regular {
-	font-family: @font-sans;
+	font-family: @font-sans-regular;
 	font-weight: normal;
-	font-style: normal;
 }
 .font-sans-italic {
-	font-family: @font-sans;
+	font-family: @font-sans-italic;
 	font-weight: normal;
-	font-style: italic;
 }
 .font-sans-bold {
-	font-family: @font-sans;
-	font-weight: bold;
-	font-style: normal;
-}
-.font-sans-bold-italic {
-	font-family: @font-sans;
-	font-weight: bold;
-	font-style: italic;
+	font-family: @font-sans-bold;
+	font-weight: normal;
 }
 
 // Serif
 .font-serif-regular {
-	font-family: @font-serif;
+	font-family: @font-serif-regular;
 	font-weight: normal;
-	font-style: normal;
 }
 .font-serif-italic {
-	font-family: @font-serif;
+	font-family: @font-serif-italic;
 	font-weight: normal;
-	font-style: italic;
 }
 .font-serif-bold {
-	font-family: @font-serif;
-	font-weight: bold;
-	font-style: normal;
+	font-family: @font-serif-bold;
+	font-weight: normal;
 }
 .font-serif-bold-italic {
-	font-family: @font-serif;
-	font-weight: bold;
-	font-style: italic;
+	font-family: @font-serif-bold-italic;
+	font-weight: normal;
 }
