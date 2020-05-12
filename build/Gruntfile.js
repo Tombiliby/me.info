@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 	"use strict";
 
@@ -17,14 +17,14 @@ module.exports = function(grunt) {
 				},
 				files: {
 					"<%= pathOrx.distStatic %>/css/style.css": [
-					"<%= pathOrx.srcStatic %>/less/bootstrap/bootstrap.less",
-					"<%= pathOrx.srcStatic %>/less/iconic/font-awesome.less",
-					"<%= pathOrx.srcStatic %>/less/fonts/fonts.less",
-					"<%= pathOrx.srcStatic %>/less/app/app.less",
-					"<%= pathOrx.srcStatic %>/less/theme.less"
+						"<%= pathOrx.srcStatic %>/less/bootstrap/bootstrap.less",
+						"<%= pathOrx.srcStatic %>/less/iconic/font-awesome.less",
+						"<%= pathOrx.srcStatic %>/less/fonts/fonts.less",
+						"<%= pathOrx.srcStatic %>/less/app/app.less",
+						"<%= pathOrx.srcStatic %>/less/theme.less"
 					],
 					"<%= pathOrx.distStatic %>/css/lowerIE9.css": [
-					"<%= pathOrx.srcStatic %>/less/app/lowerIE9.less"
+						"<%= pathOrx.srcStatic %>/less/app/lowerIE9.less"
 					]
 				}
 			}
@@ -39,6 +39,7 @@ module.exports = function(grunt) {
 				src: [
 					"<%= pathOrx.srcStatic %>/js/lib/jquery.js",
 					"<%= pathOrx.srcStatic %>/js/lib/bootstrap.js",
+					"<%= pathOrx.srcStatic %>/js/lib/tilt.jquery.min.js",
 					"<%= pathOrx.distStatic %>/js/app/*",
 					"<%= pathOrx.distStatic %>/js/app/app.js"
 				],
@@ -46,30 +47,30 @@ module.exports = function(grunt) {
 			}
 		},
 
-	  uglify: {
-	    options: {
-	      mangle: {
-	        except: ["jQuery", "Backbone"]
-	      }
-	    },
-	    my_target: {
-	      files: [{
-	          expand: true,
-	          cwd: "<%= pathOrx.srcStatic %>/js/app",
-	          src: "**/*.js",
-	          dest: "<%= pathOrx.distStatic %>/js/app"
-	      }]
-	    }
-	  },
+		uglify: {
+			options: {
+				mangle: {
+					except: ["jQuery", "Backbone"]
+				}
+			},
+			my_target: {
+				files: [{
+					expand: true,
+					cwd: "<%= pathOrx.srcStatic %>/js/app",
+					src: "**/*.js",
+					dest: "<%= pathOrx.distStatic %>/js/app"
+				}]
+			}
+		},
 
-	  copy: {
-	  	main: {
-	  		files: [
-	  			{ expand: true, src: ["fonts/*/*"], dest: "<%= pathOrx.distStatic %>", cwd: "<%= pathOrx.srcStatic %>/", filter: "isFile" },
-	  			{ expand: true, src: ["img/*/*"], dest: "<%= pathOrx.distStatic %>", cwd: "<%= pathOrx.srcStatic %>/", filter: "isFile" }
-	  		]
-	  	}
-	  },
+		copy: {
+			main: {
+				files: [
+					{ expand: true, src: ["fonts/*/*"], dest: "<%= pathOrx.distStatic %>", cwd: "<%= pathOrx.srcStatic %>/", filter: "isFile" },
+					{ expand: true, src: ["img/*/*"], dest: "<%= pathOrx.distStatic %>", cwd: "<%= pathOrx.srcStatic %>/", filter: "isFile" }
+				]
+			}
+		},
 
 		watch: {
 			less: {
@@ -89,6 +90,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	// Default task.
-	grunt.registerTask("build", ["uglify", "concat:app","less","copy"]);
+	grunt.registerTask("build", ["uglify", "concat:app", "less", "copy"]);
 
 };
