@@ -1,1 +1,1 @@
-var now=new Date,hours=now.getHours();hours>17&&$("#msg_hello").text("BONSOIR"),hours>20&&$("head").append('<link rel="stylesheet" href="./static/dist/css/style_dark.css" type="text/css" />');
+var now=new Date,hours=now.getHours();17<hours&&$("#msg_hello").text("BONSOIR"),20<hours&&$("head").append('<link rel="stylesheet" href="./static/dist/css/style_dark.css" type="text/css" />');

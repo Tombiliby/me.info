@@ -49,9 +49,7 @@ module.exports = function (grunt) {
 
 		uglify: {
 			options: {
-				mangle: {
-					except: ["jQuery", "Backbone"]
-				}
+
 			},
 			my_target: {
 				files: [{
